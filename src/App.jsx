@@ -1,36 +1,20 @@
-import CategoryList from './components/CategoryList/CategoryList';
+import { Routes, Route } from 'react-router-dom'
+import Home from './routes/home/Home'
+import Navigation from './routes/navigation/Navigation'
+
+const Gallery = () => (
+  <h1>Art gallery and stuffs</h1>
+)
 
 const App = () => {
-
-  const categories = [
-    {
-      id: 1,
-      title: 'Art',
-      imgUrl: 'https://i.imgur.com/BzHzA8L.jpeg'
-    },
-    {
-      id: 2,
-      title: 'Jewelry',
-      imgUrl: 'https://i.imgur.com/KA1pvBx.jpeg'
-    },
-    {
-      id: 3,
-      title: 'Food',
-      imgUrl: 'https://i.imgur.com/iDLLQny.jpeg'
-    },
-    {
-      id: 4,
-      title: 'Clothing',
-      imgUrl: 'https://i.imgur.com/RvXSLhl.jpeg'
-    },
-    {
-      id: 5,
-      title: 'Astrology',
-      imgUrl: 'https://i.imgur.com/OinybNy.jpeg'
-    },
-  ]
-
-  return (<CategoryList categories={categories} />);
+  return (
+    <Routes>
+      <Route path='/' element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path='gallery' element={<Gallery />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App;
