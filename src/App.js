@@ -1,43 +1,36 @@
-import './categories.scss'
+import CategoryList from './components/CategoryList/CategoryList';
 
 const App = () => {
 
   const categories = [
     {
       id: 1,
-      title: 'Art'
+      title: 'Art',
+      imgUrl: 'https://i.imgur.com/BzHzA8L.jpeg'
     },
     {
       id: 2,
-      title: 'Jewelry'
+      title: 'Jewelry',
+      imgUrl: 'https://i.imgur.com/KA1pvBx.jpeg'
     },
     {
       id: 3,
-      title: 'Food'
+      title: 'Food',
+      imgUrl: 'https://i.imgur.com/iDLLQny.jpeg'
     },
     {
       id: 4,
-      title: 'Clothing'
+      title: 'Clothing',
+      imgUrl: 'https://i.imgur.com/RvXSLhl.jpeg'
     },
     {
       id: 5,
-      title: 'Astrology'
+      title: 'Astrology',
+      imgUrl: 'https://i.imgur.com/OinybNy.jpeg'
     },
   ]
 
-  return (
-    <div className="categories">
-      {categories.map(({id, title}) => (
-        <div className="category" key={id}>
-          <img />
-          <div className="category-body">
-            <h2>{title}</h2>
-            <p>Browse</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
+  return (<CategoryList categories={categories} />);
 }
 
 export default App;
