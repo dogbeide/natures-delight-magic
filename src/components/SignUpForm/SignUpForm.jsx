@@ -56,25 +56,25 @@ const SignUpForm = () => {
     <div>
       <h1>Sign up with email and password</h1>
       <form onSubmit={handleSubmit}>
-        <FormInput type="text" required name="displayName" placeholder="John Smith"
+        <FormInput type="text" required name="displayName"
           label="Display Name"
           value={displayName}
           onChange={handleChange}
         />
 
-        <FormInput type="email" required name="email" placeholder="example@site.com"
+        <FormInput type="email" required name="email"
           label="Email"
           value={email}
           onChange={handleChange}
         />
 
-        <FormInput type="password" required name="password" placeholder="********"
+        <FormInput type="password" required name="password"
           label="Password"
           value={password}
           onChange={handleChange}
         />
 
-        <FormInput type="password" required name="confirmPassword" placeholder="********"
+        <FormInput type="password" required name="confirmPassword"
           label="Confirm Password"
           value={confirmPassword}
           onChange={handleChange}
