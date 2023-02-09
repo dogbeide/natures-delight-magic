@@ -5,6 +5,7 @@ import {
 } from "../../utils/firebase/firebase";
 import FormInput from "../FormInput/FormInput";
 import './sign-up-form.scss';
+import Button from "../Button/Button";
 
 const defaultFormFields = {
   displayName: '',
@@ -82,7 +83,7 @@ const SignUpForm = () => {
           onChange={handleChange}
         />
 
-        <button type="submit">Sign Up</button>
+        <Button type="submit">Sign Up</Button>
       </form>
     </div>
   )
