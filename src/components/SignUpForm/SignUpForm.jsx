@@ -3,6 +3,7 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserFromAuth
 } from "../../utils/firebase/firebase";
+import FormInput from "../FormInput/FormInput";
 
 const defaultFormFields = {
   displayName: '',
@@ -55,26 +56,26 @@ const SignUpForm = () => {
     <div>
       <h1>Sign up with email and password</h1>
       <form onSubmit={handleSubmit}>
-        <label>Display Name</label>
-        <input type="text" required name="displayName" placeholder="John Smith"
+        <FormInput type="text" required name="displayName" placeholder="John Smith"
+          label="Display Name"
           value={displayName}
           onChange={handleChange}
         />
 
-        <label>Email</label>
-        <input type="email" required name="email" placeholder="example@site.com"
+        <FormInput type="email" required name="email" placeholder="example@site.com"
+          label="Email"
           value={email}
           onChange={handleChange}
         />
 
-        <label>Password</label>
-        <input type="password" required name="password" placeholder="********"
+        <FormInput type="password" required name="password" placeholder="********"
+          label="Password"
           value={password}
           onChange={handleChange}
         />
 
-        <label>Confirm Password</label>
-        <input type="password" required name="confirmPassword" placeholder="********"
+        <FormInput type="password" required name="confirmPassword" placeholder="********"
+          label="Confirm Password"
           value={confirmPassword}
           onChange={handleChange}
         />
