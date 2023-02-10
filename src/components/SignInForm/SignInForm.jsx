@@ -1,7 +1,6 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import './sign-in-form.scss';
-import { UserContext } from '../../contexts/UserContext';
 import FormInput from '../FormInput/FormInput';
 import Button from '../Button/Button';
 import { 
@@ -20,7 +19,6 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
   const navigate = useNavigate();
-  const { setCurrentUser } = useContext(UserContext);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -32,8 +30,6 @@ const SignInForm = () => {
     
     try {
       const { user } = await signInWithOnlyEmailAndPassword(email, password);
-      setCurrentUser(user);
-      alert('signed in');
       resetFields();
       navigate('/');
     } catch(err) {
@@ -54,11 +50,7 @@ const SignInForm = () => {
 
   const signInWithGoogle = async () => {
     try {
-      const { user } = await signInWithGooglePopup();
-      console.log('user signInWithGooglePopup()', user);
-      const userAuth = createUserDocFromAuth(user);
-      console.log('userAuth createUserDocFromAuth()', userAuth);
-      alert('signed in with Google');
+      await signInWithGooglePopup();
       resetFields();
     } catch(err) {
       console.log('error signing in', err);

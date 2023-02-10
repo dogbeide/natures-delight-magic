@@ -6,12 +6,7 @@ import NDLogo from '../../assets/natures-delight-logo_180x180.jpg'
 import './navigation.scss'
 
 const Navigation = () => {
-  const { currentUser, setCurrentUser } = useContext(UserContext);
-  
-  const signOutHandler = async () => {
-    await signOutUser();
-    setCurrentUser(null);
-  }
+  const { currentUser } = useContext(UserContext);
 
   return (
     <Fragment>
@@ -22,7 +17,7 @@ const Navigation = () => {
         <div className="nav-links">
           <Link className="nav-link" to='/gallery'>GALLERY</Link>
           {currentUser ? (
-            <span className="nav-link" onClick={signOutHandler}>SIGN OUT</span>
+            <span className="nav-link" onClick={signOutUser}>SIGN OUT</span>
           ) : (
             <Link className="nav-link" to='/auth'>SIGN IN</Link>
           )}
