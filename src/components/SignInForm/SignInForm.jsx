@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom'
 import './sign-in-form.scss';
+import { UserContext } from '../../contexts/UserContext';
 import FormInput from '../FormInput/FormInput';
 import Button from '../Button/Button';
 import { 
@@ -19,6 +20,7 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
   const navigate = useNavigate();
+  const { setCurrentUser } = useContext(UserContext);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -30,7 +32,7 @@ const SignInForm = () => {
     
     try {
       const { user } = await signInWithOnlyEmailAndPassword(email, password);
-      console.log('user SignInWithOnlyEmailAndPassWord()', user);
+      setCurrentUser(user);
       alert('signed in');
       resetFields();
       navigate('/');
