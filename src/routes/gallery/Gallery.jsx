@@ -4,7 +4,9 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import './gallery.scss';
 
 const Gallery = () => {
-  const {products} = useContext(ProductsContext);
+  let { products } = useContext(ProductsContext);
+  if (products == null) products = [];
+
   return (
     <div className="products-container">
       {products.map((product) => (
