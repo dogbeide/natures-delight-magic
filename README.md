@@ -6,7 +6,8 @@ An e-commerce site for art, food, and esoteric services
   * Homepage, Navigation bar
   * Signup, Sign-in, Sign-out --> Firebase auth
   * GALLERY page
-    * Clothing 
+    * Product preview display
+    * Categorized Product sub-pages
     * Add to Cart button
   - Cart
     - displays item count on icon
@@ -25,7 +26,7 @@ An e-commerce site for art, food, and esoteric services
 - context, 
 - stateful functional components, 
 - firebase auth user account storage, 
-- Shop data from demo .json
+- firebase NoSQL shop data storage
 ___
 
 How to run locally:
