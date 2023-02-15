@@ -1,26 +1,4 @@
-// .categories {
-//   background-color:aqua;
-//   padding: 15px;
-
-//   .category {
-//     background-color:antiquewhite;
-//     padding: 10px;
-
-//     .category-body {
-//       background-color:aliceblue;
-//       padding: 20px;
-//     }
-//   }
-// }
-
-.categories { 
-  width: 100%; 
-  display: flex; 
-  flex-wrap: wrap; 
-  justify-content: space-between; 
-} 
-
-.category { 
+.directory-item-container { 
   min-width: 30%; 
   height: 240px; 
   flex: 1 1 auto; 
@@ -39,7 +17,7 @@
       transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95); 
     } 
 
-    & .category-body { 
+    & .body { 
       opacity: 0.9; 
     } 
   } 
@@ -63,7 +41,7 @@
     background-position: center; 
   } 
   
-  .category-body { 
+  .body { 
     height: 90px; 
     padding: 0 25px; 
     display: flex; 

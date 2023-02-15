@@ -1,0 +1,21 @@
+// .categories {
+//   background-color:aqua;
+//   padding: 15px;
+
+//   .category {
+//     background-color:antiquewhite;
+//     padding: 10px;
+
+//     .category-body {
+//       background-color:aliceblue;
+//       padding: 20px;
+//     }
+//   }
+// }
+
+.categories { 
+  width: 100%; 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+} 
